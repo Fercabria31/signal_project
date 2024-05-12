@@ -39,7 +39,9 @@ public class Patient {
         PatientRecord record = new PatientRecord(this.patientId, measurementValue, recordType, timestamp);
         this.patientRecords.add(record);
     }
-
+    public int getPatientId() {
+        return patientId;
+    }
     /**
      * Retrieves a list of PatientRecord objects for this patient that fall within a
      * specified time range.
@@ -52,6 +54,12 @@ public class Patient {
      *         range
      */
     public List<PatientRecord> getRecords(long startTime, long endTime) {
-        // TODO Implement and test this method
+        List<PatientRecord> filteredRecords = new ArrayList<>();
+        for (PatientRecord record : patientRecords) {
+            if (record.getTimestamp() >= startTime && record.getTimestamp() <= endTime) {
+                filteredRecords.add(record);
+            }
+        }
+        return filteredRecords;
     }
 }
