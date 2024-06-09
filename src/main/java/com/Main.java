@@ -18,7 +18,7 @@ public class Main {
             if (input.equals("data")) {
                 DataStorage.main(new String[]{});
             } else if (input.equals("health")) {
-                HealthDataSimulator.main(new String[]{});
+                HealthDataSimulator.main(args);
             }
         }
         System.out.println("Incorrect. No class found");
