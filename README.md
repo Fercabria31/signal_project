@@ -12,13 +12,46 @@ The Cardio Data Simulator is a Java-based application designed to simulate real-
 - Configurable patient count and data generation rate.
 - Randomized patient ID assignment for simulated data diversity.
 
-## UML CLASS DIAGRAMS
-Click [here](./uml_models) to the UML diagrams, together with their descriptions
+## Getting Started
 
 ### Prerequisites
 
 - Java JDK 11 or newer.
 - Maven for managing dependencies and compiling the application.
+
+### Installation
+
+1. Clone the repository:
+
+   ```sh
+   git clone https://github.com/tpepels/signal_project.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```sh
+   cd signal_project
+   ```
+
+3. Compile and package the application using Maven:
+   ```sh
+   mvn clean package
+   ```
+   This step compiles the source code and packages the application into an executable JAR file located in the `target/` directory.
+
+### Running the Simulator
+
+After packaging, you can run the simulator directly from the executable JAR:
+
+```sh
+java -jar target/cardio_generator-1.0-SNAPSHOT.jar
+```
+
+To run with specific options (e.g., to set the patient count and choose an output strategy):
+
+```sh
+java -jar target/cardio_generator-1.0-SNAPSHOT.jar --patient-count 100 --output file:./output
+```
 
 ### Supported Output Options
 
